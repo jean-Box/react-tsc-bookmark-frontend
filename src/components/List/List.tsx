@@ -1,22 +1,33 @@
 import React from 'react';
-import styles from './List.module.scss';
-import RemovableListItem from '../RemovableListItem';
+import EditableListItem from '../EditableListItem';
 
-type ListProps = {
-    /** An array of items, each with a description and a unique key. */
-    items: {text: string, key: string}[],
-    /** A callback function that handles item removal */
-    removeItem: (key:string) => void
+export type ListProps = {
+    items: { url: string, id: number, tags: string, authorName: string,title: string, createdAt: string }[],
+    removeItem: (id: number) => void,
+    updateItem: (id: number, url: string, tags: string) => void
 }
 
-const List: React.FC<ListProps> = ({items, removeItem}: ListProps) => {
+const List: React.FC<ListProps> = ({items, removeItem,updateItem }: ListProps) => {
     return (
-        <ul className={styles.list}>
-            {items.map(item =>  
-                <RemovableListItem text={item.text} key={item.key} id={item.key} removeItem={removeItem}/>   
+        <table  className="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">URL</th>
+                    <th scope="col">titre</th>
+                    <th scope="col">auteur</th>
+                    <th scope="col">date d'ajout</th>
+                    <th scope="col">delete</th>
+                    <th scope="col">edit</th>
+                </tr>
+            </thead>
+            <tbody>
+            {items.map(item =>
+                <EditableListItem item={item} key={item.id} removeItem={removeItem} updateItem={updateItem}/>
             )}
-        </ul>
+            </tbody>
+        </table >
     )
-  }
+}
 
-  export default List;
+export default List;

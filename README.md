@@ -1,17 +1,30 @@
-### Sharing components from a a React TS project to a component collection in [bit.dev](https://bit.dev)
+# react-ts-bookmark-frontend
 
-This app is used as an example for "harvesting" and sharing reusable React with TS components from a project.
+- visualiser et gérer ses liens référencés, l’utilisateur aura une vue principale sous forme de liste paginée avec un bouton d’ajout.
 
-### [Learn more about it here](https://blog.bitsrc.io/maximizing-code-reuse-in-react-35ee20ad362c)
+- Chaque ligne du tableau doit avoir les informations communes et des liens pour modifier ou supprimer le lien.
 
-### Here's the "before & after":
+- La page de modification du lien comporte un formulaire pour ajouter, modifier et supprimer les mots clés associé au lien.
 
-The project:
+## How To
 
-![](https://miro.medium.com/max/445/1*dpA8PYRkIme4rcO7XaFX1w.gif)
+valide URL  
+https://www.flickr.com/photos/bees/9458825659/
+https://vimeo.com/groups/513477/videos/198392879
 
-The component collection:
+### install and Launch
 
-![](https://storage.googleapis.com/static.bit.dev/blog/colleciton_ts.gif)
+`npm install` -> `npm start`
 
-### [Learn more about it here](https://blog.bitsrc.io/maximizing-code-reuse-in-react-35ee20ad362c)
+## TODO
+
+- meilleur gestion des erreurs
+- divers controle
+- rendre iso les init de props et des state
+- ErrorBoundary ne veux pas afficher les erreurs je n'ai aps trouvé pourquoi 
+- des Tests 
+
+
+
+
+

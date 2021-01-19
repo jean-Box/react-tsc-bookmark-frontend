@@ -1,14 +1,20 @@
-import React from 'react';
-import ToDoList from './components/ToDoList';
-import './App.scss';
+import BookmarkList from './components/BookmarkList';
+import ErrorBoundary from './components/ErrorBoundary';
+import React, {Component} from 'react'
 
-const App = () => {
-  return (
-    <div>
-      <h1 className="todoHeader">React with TS Demo App</h1>
-      <ToDoList />
-    </div>
-  );
+
+class App extends Component {
+
+    render() {
+        return (
+            <div className="container">
+                <ErrorBoundary>
+                    <h1 className="align-middle">React with TS Bookmark App</h1>
+                    <BookmarkList/>
+                </ErrorBoundary>
+            </div>
+        )
+    }
 }
 
 export default App;
